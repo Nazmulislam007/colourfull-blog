@@ -1,13 +1,128 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;900&family=Ms+Madi&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --red: hsl(0, 66%, 53%);
+  --purple: hsl(323, 100%, 50%);
+  --violet: hsl(288, 85%, 48%);
+  --blue: hsl(244, 100%, 54%);
+  --lightBlue: hsl(220, 100%, 50%);
+  --sky: hsl(202, 100%, 61%);
+  --yellow: hsl(63, 100%, 57%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.search {
+  background: red;
+  display: grid;
+  place-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(1, -1.5, 0, 3.23);
+}
+
+.search:hover {
+  transform: scale(1.2);
+}
+
+.home__section {
+  margin-top: 91.2px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0.55em 1.2em;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn::before {
+  content: "";
+  inset: 0 0 0 0;
+  position: absolute;
+  transition: 0.3s linear;
+  border-radius: 5px;
+}
+
+.btn:hover::before {
+  background: rgba(0, 0, 0, 0.185);
+}
+
+.btn--red {
+  background: var(--red);
+}
+
+.btn--sky {
+  background: var(--sky);
+}
+
+.btn--yellow {
+  background: var(--yellow);
+}
+
+.btn--violet {
+  background: var(--violet);
+}
+
+.btn--blue {
+  background: var(--blue);
+}
+
+.btn--liteBlue {
+  background: var(--lightBlue);
+}
+
+.btn--purple {
+  background: var(--purple);
+}
+
+.btn--position {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.5em;
+}
+
+.btn--position span {
+  font-size: 0.5em;
+}
+
+.btn--position::before {
+  content: "";
+  inset: 0 0 0 0;
+  position: absolute;
+  transition: 0.3s linear;
+  border-radius: 5px;
+}
+
+.btn--position:hover::before {
+  background: rgba(0, 0, 0, 0.185);
+}
+
+@media screen and (min-width: 800px) {
+  .home__section {
+    margin-top: 110px;
+  }
 }

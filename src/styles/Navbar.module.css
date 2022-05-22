@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1.2em 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1111111;
+  background: white;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  font-size: 2.5em;
+  font-weight: bolder;
+  font-family: "Ms Madi", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar__nav > * + * {
+  margin-left: 1.5em;
+}
+
+.nav__item {
+  list-style-type: none;
+}
+
+.nav__link {
+  font-size: 1.3em;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .hamburger {
+    display: block;
+    margin-right: 6px;
+    cursor: pointer;
+    z-index: 222222222;
+  }
+  .navbar__nav {
+    position: fixed;
+    background: white;
+    top: 92px;
+    right: 30px;
+    width: 65%;
+    padding: 15px;
+    display: block;
+    clip-path: circle(0% at 100% 0);
+    transition: clip-path 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .active {
+    clip-path: circle(73.7% at 50% 50%);
+  }
+
+  .nav__item {
+    margin-bottom: 20px;
+  }
+
+  .navbar__nav > * + * {
+    margin-left: 0;
+  }
+}
