@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+
+  gap: 1em;
+}
+
+.card {
+  padding: 1.2em;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+
+.card__name {
+  margin: 0.7em 0;
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.605);
+}
+
+.card__header {
+  font-size: 1.8em;
+  color: rgb(69, 69, 69);
+}
+
+@media screen and (min-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    flex-basis: 70%;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "../styles/Navbar.module.css";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -16,29 +17,29 @@ const Navbar = () => {
 
   return (
     <div className={classes.navbar}>
-      <a href="/" className={classes.navbar__brand}>
+      <Link to="/" className={classes.navbar__brand}>
         Colour Full
-      </a>
+      </Link>
       <ul className={`${classes.navbar__nav} ${toggle && classes.active}`}>
         <li className={classes.nav__item}>
-          <a href="/" className={classes.nav__link}>
+          <Link to="/" className={classes.nav__link}>
             Home
-          </a>
+          </Link>
         </li>
         <li className={classes.nav__item}>
-          <a href="/" className={classes.nav__link}>
+          <Link to="/about" className={classes.nav__link}>
             About
-          </a>
+          </Link>
         </li>
         <li className={classes.nav__item}>
-          <a href="/" className={classes.nav__link}>
-            Blog
-          </a>
+          <Link to="/blogs" className={classes.nav__link}>
+            Blogs
+          </Link>
         </li>
         <li className={classes.nav__item}>
-          <a href="/" className={classes.nav__link}>
+          <Link to="/contact" className={classes.nav__link}>
             Contact
-          </a>
+          </Link>
         </li>
         <li className={`${classes.nav__item} search`}>
           <FaSearch color="white" />

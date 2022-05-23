@@ -12,28 +12,6 @@
   gap: 40px;
 }
 
-.grid {
-  display: grid;
-  gap: 1em;
-}
-
-.card {
-  padding: 1.2em;
-  box-shadow: var(--shadow);
-  border-radius: 10px;
-}
-
-.card__name {
-  margin: 0.7em 0;
-  font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.605);
-}
-
-.card__header {
-  font-size: 1.8em;
-  color: rgb(69, 69, 69);
-}
-
 /* options */
 
 .options > * + * {
@@ -101,30 +79,6 @@
 .social {
   display: grid;
   gap: 10px;
-}
-
-.subscribe {
-  width: 100%;
-  height: 50vh;
-  background: url("https://source.unsplash.com/3wtXva9z4AA");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  margin-bottom: 5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.subscribe h2 {
-  font-size: 2em;
-  color: rgb(212, 212, 212);
-}
-
-.subscribe p {
-  color: rgb(206, 206, 206);
 }
 
 @media screen and (min-width: 800px) {

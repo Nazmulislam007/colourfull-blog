@@ -2,40 +2,21 @@ import React from "react";
 import { AiOutlineTags } from "react-icons/ai";
 import imageUrl from "../Api/imageApi";
 import classes from "../styles/BlogSection.module.css";
-import useMediaQuery from "../useMediaQuery";
+import Blog from "./Blog";
+import Footer from "./Footer";
+import Subscribe from "./Subscribe";
 
 const BlogSection = () => {
-  const { blog__section, grid, card, card__img, card__name, card__header } =
-    classes;
-
-  const isDestop = useMediaQuery("(min-width: 800px)");
-
   return (
     <>
-      <div className={blog__section}>
-        <div className={grid}>
-          {imageUrl
-            .filter((item, index) => index <= 7)
-            .map(({ imageUrl, id, location, description }) => (
-              <div key={id} className={card}>
-                <img
-                  src={imageUrl}
-                  alt="name"
-                  width="800"
-                  height={isDestop ? "290" : "200"}
-                  className={classes.card__img_radio}
-                />
-                <p className={card__name}>{location}</p>
-                <h2 className={card__header}>{description}</h2>
-              </div>
-            ))}
-        </div>
+      <div className={classes.blog__section}>
+        <Blog isSimpilified />
         <div className={classes.options}>
           <div className={classes.popular__post}>
             <h2 className={classes.popular__post__header}>Popular post</h2>
             {imageUrl.slice(6, 9).map(({ imageUrl, id, tag, description }) => (
               <div key={id} className={classes.popular__post__card}>
-                <div className={card__img}>
+                <div className={classes.card__img}>
                   <img src={imageUrl} alt="name" />
                 </div>
                 <div className={classes.card__content}>
@@ -109,11 +90,8 @@ const BlogSection = () => {
           </div>
         </div>
       </div>
-      <div className={classes.subscribe}>
-        <h2>Subscribe to Grace is Home</h2>
-        <p>Sign up if you don't have an account</p>
-        <button className="btn btn--red">Sign Up</button>
-      </div>
+      <Subscribe />
+      <Footer />
     </>
   );
 };

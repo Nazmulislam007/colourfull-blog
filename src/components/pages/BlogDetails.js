@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../Navbar";
 
-const Gallery = () => {
+const BlogDetails = () => {
   return (
     <>
       <Navbar />
-      Gallery
+      BlogDetails
     </>
   );
 };
 
-export default Gallery;
+export default BlogDetails;
