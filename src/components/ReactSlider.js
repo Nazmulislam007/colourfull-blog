@@ -8,7 +8,7 @@ import { MdAddLocationAlt } from "react-icons/md";
 
 const ReactSlider = () => {
   return (
-    <section className="margin-t-91">
+    <section>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}

@@ -36,9 +36,13 @@ a {
   transform: scale(1.2);
 }
 
-.margin-t-91 {
+body {
   margin-top: 91.2px;
 }
+
+/* .margin-t-91 {
+  margin-top: 91.2px;
+} */
 
 img {
   display: block;
@@ -46,7 +50,7 @@ img {
   object-fit: cover;
 }
 
-.blogs {
+.container {
   max-width: 1300px;
   width: 95%;
   margin-left: auto;
@@ -129,32 +133,52 @@ img {
   background: rgba(0, 0, 0, 0.185);
 }
 
-.subscribe {
-  width: 100%;
-  height: 50vh;
-  background: url("https://source.unsplash.com/3wtXva9z4AA");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  margin-bottom: 5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.header {
+  text-align: center;
+  font-size: 2.4em;
+  margin: 0.6em 0 0.8em;
+}
+
+.windowImg {
+  position: fixed;
+  inset: 0 0 0 0;
+  background: rgba(0, 0, 0, 0.601);
+  z-index: 99999999;
+  display: grid;
+  place-items: center;
+}
+
+.windowImg img {
+  height: 80vh;
+  width: 80vw;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.social {
+  display: grid;
   gap: 10px;
 }
 
-.subscribe h2 {
-  font-size: 2em;
-  color: rgb(212, 212, 212);
-}
-
-.subscribe p {
-  color: rgb(206, 206, 206);
+.tag {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 @media screen and (min-width: 800px) {
   .home__section {
     margin-top: 110px;
+  }
+
+  .tag {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

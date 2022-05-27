@@ -1,0 +1,17 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0.5em;
+}
+
+.gallery__img {
+  border-radius: 10px;
+  height: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .gallery {
+    padding: 1em;
+  }
+}

@@ -6,7 +6,7 @@ const Blogs = () => {
   return (
     <>
       <Navbar />
-      <div className={`margin-t-91 blogs`}>
+      <div className="container">
         <Blog />
       </div>
       <Footer />

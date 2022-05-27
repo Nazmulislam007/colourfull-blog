@@ -44,6 +44,9 @@ const Navbar = () => {
         <li className={`${classes.nav__item} search`}>
           <FaSearch color="white" />
         </li>
+        {/* <li className={classes.nav__item}>
+
+        </li> */}
       </ul>
       <GiHamburgerMenu
         fontSize="26px"
