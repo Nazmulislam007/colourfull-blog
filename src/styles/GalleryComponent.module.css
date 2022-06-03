@@ -5,6 +5,12 @@
   padding: 0.5em;
 }
 
+.mediaGrid {
+  display: grid;
+  gap: 10px;
+  padding: 0.5em;
+}
+
 .gallery__img {
   border-radius: 10px;
   height: 100%;

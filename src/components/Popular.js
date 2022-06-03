@@ -2,6 +2,7 @@ import React from "react";
 import imageUrl from "../Api/imageApi";
 import classes from "../styles/Popular.module.css";
 import { AiOutlineTags } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   return (
@@ -9,7 +10,11 @@ const Popular = () => {
       <div className={classes.popular__post}>
         <h2 className="header">Popular post</h2>
         {imageUrl.slice(6, 9).map(({ imageUrl, id, tag, description }) => (
-          <div key={id} className={classes.popular__post__card}>
+          <Link
+            to={`/blogs/${id}`}
+            key={id}
+            className={classes.popular__post__card}
+          >
             <div className={classes.card__img}>
               <img src={imageUrl} alt="name" />
             </div>
@@ -23,7 +28,7 @@ const Popular = () => {
                 <p>{tag}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </>

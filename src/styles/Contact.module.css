@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  /* place-content: center; */
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__control {
+  padding: 1em 1.1em;
+}
+
+.form__control > * {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.4em;
+  font-size: 1.2em;
+}
+
+@media screen and (min-width: 800px) {
+  .contact {
+    flex-direction: row;
+    margin-top: 4em;
+  }
+  .contact > * {
+    flex-basis: 50%;
+  }
+  .contact > img {
+    max-width: 500px;
+  }
+}

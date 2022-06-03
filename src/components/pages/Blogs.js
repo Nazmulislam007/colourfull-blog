@@ -6,7 +6,11 @@ const Blogs = () => {
   return (
     <>
       <Navbar />
+
       <div className="container">
+        <h2 className="header" style={{ marginBottom: "25px" }}>
+          Blogs
+        </h2>
         <Blog />
       </div>
       <Footer />

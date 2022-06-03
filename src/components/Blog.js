@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import imageUrl from "../Api/imageApi";
 import useMediaQuery from "../useMediaQuery";
 import classes from "../styles/Blog.module.css";
+import { Link } from "react-router-dom";
 
 const Blog = ({ isSimpilified }) => {
   const isDestop = useMediaQuery("(min-width: 800px)");
   const [totalImg] = useState(
     imageUrl.filter((item, index) => (isSimpilified ? index <= 7 : index + 1))
   );
+
   return (
     <>
       <div className={classes.grid}>
         {totalImg?.map(({ imageUrl, id, location, description }) => (
-          <div key={id} className={classes.card}>
+          <Link to={`/blogs/${id}`} key={id} className={classes.card}>
             <img
               src={imageUrl}
               alt="name"
@@ -22,7 +24,7 @@ const Blog = ({ isSimpilified }) => {
             />
             <p className={classes.card__name}>{location}</p>
             <h2 className={classes.card__header}>{description}</h2>
-          </div>
+          </Link>
         ))}
       </div>
     </>

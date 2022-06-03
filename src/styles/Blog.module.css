@@ -8,6 +8,7 @@
   padding: 1.2em;
   box-shadow: var(--shadow);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .card__name {

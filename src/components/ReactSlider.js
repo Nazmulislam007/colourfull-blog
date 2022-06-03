@@ -5,6 +5,7 @@ import "swiper/css";
 import classes from "../styles/ReactSlider.module.css";
 import imageUrl from "../Api/imageApi";
 import { MdAddLocationAlt } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const ReactSlider = () => {
   return (
@@ -34,7 +35,7 @@ const ReactSlider = () => {
           .filter((item, index) => index < 5)
           .map(({ imageUrl, id, description, author, time, location }) => (
             <SwiperSlide key={id}>
-              <a href="/">
+              <Link to={`/blogs/${id}`}>
                 <div className={classes.swiperSlide__child}>
                   <div className={classes.swiperSlide__img__container}>
                     <img src={imageUrl} alt="slider" />
@@ -54,7 +55,7 @@ const ReactSlider = () => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </SwiperSlide>
           ))}
       </Swiper>
