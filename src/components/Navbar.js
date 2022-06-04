@@ -41,12 +41,18 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
+        <li className={classes.nav__item}>
+          <Link
+            to="/signin"
+            style={{ fontSize: "1.1em" }}
+            className={`btn btn--red ${classes.nav__link}`}
+          >
+            SignIn
+          </Link>
+        </li>
         <li className={`${classes.nav__item} search`}>
           <FaSearch color="white" />
         </li>
-        {/* <li className={classes.nav__item}>
-
-        </li> */}
       </ul>
       <GiHamburgerMenu
         fontSize="26px"

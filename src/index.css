@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;900&family=Ms+Madi&display=swap");
 * {
   margin: 0;
@@ -11,13 +15,15 @@ html {
 }
 
 :root {
-  --red: hsl(0, 66%, 53%);
+  --red: hsl(0, 100%, 50%);
   --purple: hsl(323, 100%, 50%);
   --violet: hsl(288, 85%, 48%);
   --blue: hsl(244, 100%, 54%);
   --lightBlue: hsl(220, 100%, 50%);
   --sky: hsl(202, 100%, 61%);
   --yellow: hsl(63, 100%, 57%);
+
+  --h: 91.2px;
 }
 
 a {
@@ -26,7 +32,7 @@ a {
 }
 
 .search {
-  background: red;
+  background: #ff0000;
   display: grid;
   place-items: center;
   height: 30px;
@@ -41,7 +47,11 @@ a {
 }
 
 body {
-  margin-top: 91.2px;
+  margin-top: var(--h);
+}
+
+.signin-container {
+  min-height: calc(100vh - var(--h));
 }
 
 /* .margin-t-91 {

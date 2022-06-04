@@ -7,6 +7,8 @@ import {
   Contact,
   Gallery,
   Home,
+  SignIn,
+  SignUp,
 } from "./components";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </>
   );
