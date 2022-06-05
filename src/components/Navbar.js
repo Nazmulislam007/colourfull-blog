@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classes from "../styles/Navbar.module.css";
-import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContextPorvider";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -14,6 +14,8 @@ const Navbar = () => {
       setToggle(false);
     }
   };
+
+  const { currentUserState, logout } = useAuth();
 
   return (
     <div className={classes.navbar}>
@@ -41,18 +43,30 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
-        <li className={classes.nav__item}>
-          <Link
-            to="/signin"
-            style={{ fontSize: "1.1em" }}
-            className={`btn btn--red ${classes.nav__link}`}
-          >
-            SignIn
-          </Link>
-        </li>
-        <li className={`${classes.nav__item} search`}>
-          <FaSearch color="white" />
-        </li>
+        {currentUserState ? (
+          <>
+            <li className={`${classes.nav__item} text-red-400 text-lg`}>
+              {currentUserState?.displayName}
+            </li>
+            <li
+              style={{ fontSize: "1.1em" }}
+              className={`btn btn--red ${classes.nav__link}`}
+              onClick={logout}
+            >
+              Logout
+            </li>
+          </>
+        ) : (
+          <li className={classes.nav__item}>
+            <Link
+              to="/signin"
+              style={{ fontSize: "1.1em" }}
+              className={`btn btn--red ${classes.nav__link}`}
+            >
+              SignIn
+            </Link>
+          </li>
+        )}
       </ul>
       <GiHamburgerMenu
         fontSize="26px"

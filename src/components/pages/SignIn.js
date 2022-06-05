@@ -1,25 +1,35 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContextPorvider";
 import Form from "../Form";
 import InputButton from "../InputButton";
 import Navbar from "../Navbar";
 import TextInput from "../TextInput";
 
 const SignIn = () => {
+  const [loading, setLoading] = useState();
   const [inputValue, setInputValue] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
-  const handleForm = (e) => {
+  const { login } = useAuth();
+
+  const handleForm = async (e) => {
     e.preventDefault();
-    const { username, password } = inputValue;
-    if (!username || !password) return alert("fill the all data");
-    setInputValue({
-      username: "",
-      password: "",
-    });
-    alert("success");
+    const { email, password } = inputValue;
+    if (!email || !password) return alert("fill the all data");
+
+    try {
+      setLoading(true);
+      await login(email, password);
+      setInputValue({ email: "", password: "" });
+      alert("success");
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
   };
 
   const handleInput = (e) => {
@@ -33,11 +43,11 @@ const SignIn = () => {
       <div className="signin-container flex items-center justify-center mt-[-60px]">
         <Form onSubmit={handleForm}>
           <TextInput
-            name="username"
+            name="email"
             type="text"
-            placeholder="Username"
-            label="Username"
-            value={inputValue.username}
+            placeholder="email"
+            label="email"
+            value={inputValue.email}
             onChange={handleInput}
           />
           <TextInput
@@ -53,6 +63,7 @@ const SignIn = () => {
             <InputButton
               className="bg-blue-600 hover:bg-blue-900"
               type="submit"
+              disabled={loading}
             >
               Sign In
             </InputButton>

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;900&family=Ms+Madi&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ a {
   color: black;
 }
 
-.search {
+/* .search {
   background: #ff0000;
   display: grid;
   place-items: center;
@@ -44,7 +45,7 @@ a {
 
 .search:hover {
   transform: scale(1.2);
-}
+} */
 
 body {
   margin-top: var(--h);
