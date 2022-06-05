@@ -10,6 +10,7 @@ import {
   SignIn,
   SignUp,
 } from "./components";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const { pathname } = useLocation();
@@ -27,8 +28,22 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/signin"
+          element={
+            <PrivateRoute>
+              <SignIn />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <PrivateRoute>
+              <SignUp />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </>
   );

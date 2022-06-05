@@ -103,9 +103,6 @@ const SignUp = () => {
             </InputButton>
           </div>
           <div className="flex flex-col">
-            <InputButton className="hover:bg-red-700 w-full bg-red-500">
-              Sign up with google
-            </InputButton>
             <Link
               to="/signin"
               className="mt-2 hover:text-blue-400 transition-all"

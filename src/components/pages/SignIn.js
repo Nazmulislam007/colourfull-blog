@@ -13,7 +13,7 @@ const SignIn = () => {
     password: "",
   });
 
-  const { login } = useAuth();
+  const { login, googleSignUp } = useAuth();
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -35,6 +35,18 @@ const SignIn = () => {
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
+  };
+
+  const handleGoogleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      await googleSignUp();
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      alert("error founded");
+    }
   };
 
   return (
@@ -75,8 +87,11 @@ const SignIn = () => {
             </Link>
           </div>
           <div className="mb-2">
-            <InputButton className=" hover:bg-red-700 w-full bg-red-500">
-              Sign up with google
+            <InputButton
+              onClick={handleGoogleSubmit}
+              className=" hover:bg-red-700 w-full bg-red-500"
+            >
+              Sign in with google
             </InputButton>
           </div>
           <Link

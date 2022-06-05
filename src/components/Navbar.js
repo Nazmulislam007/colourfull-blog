@@ -45,9 +45,19 @@ const Navbar = () => {
         </li>
         {currentUserState ? (
           <>
-            <li className={`${classes.nav__item} text-red-400 text-lg`}>
-              {currentUserState?.displayName}
-            </li>
+            <div className="flex flex-col-reverse items-center">
+              <li className={`${classes.nav__item} text-red-400 text-sm`}>
+                {currentUserState?.displayName}
+              </li>
+              <li className={`${classes.nav__item} `}>
+                <img
+                  src={currentUserState?.photoURL}
+                  className="w-8, h-8 rounded-full"
+                  alt="pic"
+                />
+              </li>
+            </div>
+
             <li
               style={{ fontSize: "1.1em" }}
               className={`btn btn--red ${classes.nav__link}`}
