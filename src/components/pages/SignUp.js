@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import Form from "../Form";
+import InputButton from "../InputButton";
 import Navbar from "../Navbar";
+import TextInput from "../TextInput";
 
 const SignUp = () => {
-  const [state, setState] = useState(false);
   const [inputData, setInputData] = useState({
     username: "",
     email: "",
@@ -50,65 +52,46 @@ const SignUp = () => {
     <>
       <Navbar />
       <div className="signin-container flex items-center justify-center mt-[-60px]">
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white max-w-[320px] w-full shadow-2xl rounded px-8 pt-6 pb-8 mb-4"
-        >
-          <div className="mb-4">
-            <label className="block text-black text-lg font-bold mb-2">
-              Username
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight  focus:outline-red-600"
-              name="username"
-              value={inputData.username}
-              type="text"
-              placeholder="Username"
-              onChange={handleInput}
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-black text-lg font-bold mb-2">
-              Email
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight ${classes.join(
-                ""
-              )}`}
-              name="email"
-              type="email"
-              value={inputData.email}
-              placeholder="Email"
-              onChange={handleInput}
-            />
-          </div>
+        <Form onSubmit={handleSubmit}>
+          <TextInput
+            name="username"
+            value={inputData.username}
+            type="text"
+            placeholder="Username"
+            onChange={handleInput}
+            label={"Username"}
+          />
+          <TextInput
+            className={`${classes.join("")}`}
+            name="email"
+            type="email"
+            value={inputData.email}
+            placeholder="Email"
+            onChange={handleInput}
+            label={"Email"}
+          />
+          <TextInput
+            className={`${className.join("")}`}
+            name="password"
+            type="password"
+            value={inputData.password}
+            placeholder="******************"
+            onChange={handleInput}
+            label="Password"
+          />
+
           <div className="mb-2">
-            <label className="block text-black text-lg font-bold mb-2">
-              Password
-            </label>
-            <input
-              className={`shadow appearance-none border border-red rounded w-full py-2 px-3 text-black mb-3 leading-tight ${className.join(
-                ""
-              )}`}
-              name="password"
-              type="password"
-              value={inputData.password}
-              placeholder="******************"
-              onChange={handleInput}
-            />
-          </div>
-          <div className="mb-2">
-            <button
-              className="bg-blue-600 hover:bg-blue-900 text-white w-full text-center font-bold py-2 px-4 rounded focus-within:shadow-outline transition-all"
+            <InputButton
+              className="bg-blue-600 hover:bg-blue-900 w-full "
               type="submit"
             >
               Sign Up
-            </button>
+            </InputButton>
           </div>
           <div className="flex flex-col">
-            <button className="py-2 px-4 text-center transition-all hover:bg-red-700 w-full bg-red-500 rounded text-white">
+            <InputButton className="hover:bg-red-700 w-full bg-red-500">
               Sign up with google
-            </button>
+            </InputButton>
             <Link
               to="/signin"
               className="mt-2 hover:text-blue-400 transition-all"
@@ -116,7 +99,7 @@ const SignUp = () => {
               Already have an account?
             </Link>
           </div>
-        </form>
+        </Form>
       </div>
     </>
   );

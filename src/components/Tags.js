@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const Tags = () => {
   return (
@@ -6,13 +7,13 @@ const Tags = () => {
       <div>
         <h2 className="header">Tags Cloud</h2>
         <div className="tag">
-          <button className="btn btn--red">Home</button>
-          <button className="btn btn--blue">Family</button>
-          <button className="btn btn--purple">Love</button>
-          <button className="btn btn--liteBlue">Grace</button>
-          <button className="btn btn--violet">Bueaty</button>
-          <button className="btn btn--sky">Experiences</button>
-          <button className="btn btn--yellow">Personal</button>
+          <Button className="btn--red">Home</Button>
+          <Button className="btn--blue">Family</Button>
+          <Button className="btn--purple">Love</Button>
+          <Button className="btn--liteBlue">Grace</Button>
+          <Button className="btn--violet">Bueaty</Button>
+          <Button className="btn--sky">Experiences</Button>
+          <Button className="btn--yellow">Personal</Button>
         </div>
       </div>
     </>
