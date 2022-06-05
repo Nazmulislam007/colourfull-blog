@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthContextPorvider from "./context/AuthContextPorvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
-      <ToastContainer />
+      <AuthContextPorvider>
+        <App />
+        <ToastContainer />
+      </AuthContextPorvider>
     </BrowserRouter>
   </React.StrictMode>
 );

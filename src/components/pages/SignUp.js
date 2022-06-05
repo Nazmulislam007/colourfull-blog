@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { useAuth } from "../../context/AuthContextPorvider";
 import Form from "../Form";
 import InputButton from "../InputButton";
 import Navbar from "../Navbar";
 import TextInput from "../TextInput";
 
 const SignUp = () => {
+  const [loading, setLoading] = useState();
   const [inputData, setInputData] = useState({
     username: "",
     email: "",
@@ -29,18 +30,30 @@ const SignUp = () => {
     classes.push("focus:outline-red-600");
   }
 
-  const handleSubmit = (e) => {
+  const { signup } = useAuth();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!inputData.username || !inputData.email || !inputData.password)
-      return alert("fill the all data");
+    const { username, email, password } = inputData;
 
-    setInputData({
-      username: "",
-      email: "",
-      password: "",
-    });
-    alert("successfull");
+    if (!username || !email || !password) return alert("fill the all data");
+
+    try {
+      setLoading(true);
+      await signup(username, email, password);
+      alert("Create a new account");
+      setInputData({
+        username: "",
+        email: "",
+        password: "",
+      });
+      setLoading(false);
+    } catch (error) {
+      alert("Something worng");
+      console.log(error);
+      setLoading(false);
+    }
   };
 
   const handleInput = (e) => {
@@ -84,6 +97,7 @@ const SignUp = () => {
             <InputButton
               className="bg-blue-600 hover:bg-blue-900 w-full "
               type="submit"
+              disabled={loading}
             >
               Sign Up
             </InputButton>
