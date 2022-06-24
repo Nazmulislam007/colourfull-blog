@@ -7,4 +7,9 @@ const PrivateRoute = ({ children }) => {
   return !currentUserState ? children : <Navigate to="/" replace={true} />;
 };
 
-export default PrivateRoute;
+const PrivatePageRoute = ({ children }) => {
+  const { currentUserState } = useAuth();
+  return currentUserState ? children : <Navigate to="/signin" replace={true} />;
+};
+
+export { PrivateRoute, PrivatePageRoute };

@@ -17,6 +17,8 @@ const Navbar = () => {
 
   const { currentUserState, logout } = useAuth();
 
+  console.log(currentUserState);
+
   return (
     <div className={classes.navbar}>
       <Link to="/" className={classes.navbar__brand}>
@@ -33,11 +35,13 @@ const Navbar = () => {
             About
           </Link>
         </li>
-        <li className={classes.nav__item}>
-          <Link to="/blogs" className={classes.nav__link}>
-            Blogs
-          </Link>
-        </li>
+        {currentUserState && (
+          <li className={classes.nav__item}>
+            <Link to="/blogs" className={classes.nav__link}>
+              Blogs
+            </Link>
+          </li>
+        )}
         <li className={classes.nav__item}>
           <Link to="/contact" className={classes.nav__link}>
             Contact
@@ -49,13 +53,15 @@ const Navbar = () => {
               <li className={`${classes.nav__item} text-red-400 text-sm`}>
                 {currentUserState?.displayName}
               </li>
-              <li className={`${classes.nav__item} `}>
-                <img
-                  src={currentUserState?.photoURL}
-                  className="w-8, h-8 rounded-full"
-                  alt="pic"
-                />
-              </li>
+              {currentUserState?.photoURL && (
+                <li className={`${classes.nav__item} `}>
+                  <img
+                    src={currentUserState?.photoURL}
+                    className="w-8, h-8 rounded-full"
+                    alt="pic"
+                  />
+                </li>
+              )}
             </div>
 
             <li

@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBWKeSh7g-sl0ls_HzjXarDhtx7_pZ5HXQ",
-  authDomain: "blog-app-8d6ed.firebaseapp.com",
-  projectId: "blog-app-8d6ed",
-  storageBucket: "blog-app-8d6ed.appspot.com",
-  messagingSenderId: "1051985250729",
-  appId: "1:1051985250729:web:1ce46cc0ced3b2c6449cb8",
+  apiKey: "AIzaSyA4wI8P3h4JlF4VBUyOijRBRah6PKn8ug8",
+  authDomain: "colourful-blog.firebaseapp.com",
+  projectId: "colourful-blog",
+  storageBucket: "colourful-blog.appspot.com",
+  messagingSenderId: "28661853832",
+  appId: "1:28661853832:web:a8f30882996335e41df93d",
 };
 
 const app = initializeApp(firebaseConfig);
