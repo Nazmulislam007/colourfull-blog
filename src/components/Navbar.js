@@ -17,8 +17,6 @@ const Navbar = () => {
 
   const { currentUserState, logout } = useAuth();
 
-  console.log(currentUserState);
-
   return (
     <div className={classes.navbar}>
       <Link to="/" className={classes.navbar__brand}>
